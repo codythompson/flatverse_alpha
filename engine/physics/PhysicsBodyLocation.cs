@@ -18,7 +18,7 @@ namespace flatverse.physics
 
         public virtual void moveTo(Vector2 newPos)
         {
-            prevPos = newPos;
+            prevPos = pos;
             pos = newPos;
         }
 
@@ -45,7 +45,7 @@ namespace flatverse.physics
             Vector2 p1 = getIntermediate(t1);
             Vector2 p2 = getIntermediate(t2);
 
-            return (p2 - p1).Length();
+            return Vector2.Distance(p1, p2);
         }
 
         public abstract Polygon getPath(float t);
