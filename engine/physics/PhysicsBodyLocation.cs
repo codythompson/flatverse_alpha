@@ -37,9 +37,6 @@ namespace flatverse.physics
             if (t == 0) return prevPos;
             if (t == 1) return pos;
 
-            Vector2 diff = pos - prevPos;
-            diff *= t;
-
             return prevPos + ((pos - prevPos) * t);
         }
 
