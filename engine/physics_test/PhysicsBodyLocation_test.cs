@@ -134,8 +134,11 @@ namespace physics_test
 
         public Vector2 getIntermediatePoint(Vector2 pos, Vector2 prevPos, float t)
         {
-            float intX = pos.X + ((pos.X - prevPos.X) * t);
-            float intY = pos.Y + ((pos.Y - prevPos.Y) * t);
+            float testX = (pos.X - prevPos.X);
+            testX *= t;
+
+            float intX = prevPos.X + (float)((pos.X - prevPos.X) * t);
+            float intY = prevPos.Y + (float)((pos.Y - prevPos.Y) * t);
 
             return new Vector2(intX, intY);
         }
