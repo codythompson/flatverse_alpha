@@ -19,8 +19,40 @@ namespace flatverse.physics
             ID = _ID_SEQUENCE.increment();
         }
 
-        public virtual Tuple<float, float> fixCollision(PhysicsBody other) {
-            throw new NotImplementedException();
+        public virtual float fixCollision(PhysicsBody other) {
+            PhysicsBodyLocation otherLoc = other.getLocation();
+
+            if (!location.intersectsPath(otherLoc.getPath(1), 1))
+            {
+                return 1;
+            }
+
+            float t = 0.5f;
+            float prevT = 1;
+            float prevNon = 0;
+            float tDelt = 0.25f;
+
+            while (location.getDistance(t, prevT) >= 1 && otherLoc.getDistance(t, prevT) >= 1)
+            {
+                prevT = t;
+                if (location.intersectsPath(otherLoc.getPath(t), t))
+                {
+                    t -= tDelt;
+                }
+                else
+                {
+                    prevNon = t;
+                    t += tDelt;
+                }
+                tDelt = tDelt / 2;
+            }
+
+            if (location.intersectsPath(otherLoc.getPath(t), t))
+            {
+                t = prevNon;
+            }
+
+            return t;
         }
 
         public virtual Vector2 adjustPath(PhysicsBody other)
