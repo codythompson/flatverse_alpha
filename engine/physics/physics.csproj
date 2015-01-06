@@ -43,8 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PhysicsBody.cs" />
     <Compile Include="PhysicsBodyLocation.cs" />
     <Compile Include="PhysicsBodyMotion.cs" />
+    <Compile Include="PhysicsUtils.cs" />
     <Compile Include="PlatformInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="shapes\FlatversePhysicsShapeException.cs" />
