@@ -16,7 +16,7 @@ namespace physics_test
             throw new NotImplementedException();
         }
 
-        public override Rectangle getPathBoundingBox(float t)
+        public override FVRectangle getPathBoundingBox(float t)
         {
             throw new NotImplementedException();
         }
@@ -41,7 +41,7 @@ namespace physics_test
             throw new NotImplementedException();
         }
 
-        public override bool intersectsPrevPos(Polygon other, float t)
+        public override bool intersectsPrevPos(Polygon other)
         {
             throw new NotImplementedException();
         }

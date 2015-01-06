@@ -50,7 +50,7 @@ namespace flatverse.physics
 
         public abstract Polygon getPath(float t);
 
-        public abstract Rectangle getPathBoundingBox(float t);
+        public abstract FVRectangle getPathBoundingBox(float t);
 
         public abstract Polygon getBounds(float t);
 
@@ -60,7 +60,7 @@ namespace flatverse.physics
 
         public abstract bool intersectsPos(Polygon other, float t);
 
-        public abstract bool intersectsPrevPos(Polygon other, float t);
+        public abstract bool intersectsPrevPos(Polygon other);
 
         public abstract Vector2 adjustPath(PhysicsBodyLocation other);
 
