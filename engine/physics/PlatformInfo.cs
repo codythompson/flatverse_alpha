@@ -35,9 +35,9 @@ namespace flatverse.physics
             PhysicsBodyLocation pLoc = platform.getLocation();
 
             // figure out positionY
-            if (pLoc.onPlatformAbove(other))
+            if (pLoc.onPlatformAbove(other, 1))
             {
-                if (pLoc.onPlatformBelow(other))
+                if (pLoc.onPlatformBelow(other, 1))
                 {
                     positionY = PositionY.BOTH;
                 }
@@ -46,7 +46,7 @@ namespace flatverse.physics
                     positionY = PositionY.ABOVE;
                 }
             }
-            else if (pLoc.onPlatformBelow(other))
+            else if (pLoc.onPlatformBelow(other, 1))
             {
                 positionY = PositionY.BELOW;
             }
@@ -56,9 +56,9 @@ namespace flatverse.physics
             }
 
             // figure out positionX
-            if (pLoc.onPlatformLeftOf(other))
+            if (pLoc.onPlatformLeftOf(other, 1))
             {
-                if (pLoc.onPlatformRightOf(other))
+                if (pLoc.onPlatformRightOf(other, 1))
                 {
                     positionX = PositionX.BOTH;
                 }
@@ -67,7 +67,7 @@ namespace flatverse.physics
                     positionX = PositionX.LEFTOF;
                 }
             }
-            else if (pLoc.onPlatformRightOf(other))
+            else if (pLoc.onPlatformRightOf(other, 1))
             {
                 positionX = PositionX.RIGHTOF;
             }

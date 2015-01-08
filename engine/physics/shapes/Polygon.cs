@@ -157,6 +157,32 @@ namespace flatverse.physics
             return false;
         }
 
+        public bool intersects(Polygon other)
+        {
+            if (!other.intersects(bnds))
+            {
+                return false;
+            }
+
+            foreach (Vector2 pt in other.points()) {
+                if (contains(pt))
+                {
+                    return true;
+                }
+            }
+
+            foreach (LineSegment edgeLine in other.segments())
+            {
+                if (intersects(edgeLine))
+                {
+                    return true;
+                }
+            }
+
+            //if we've gotten this far the line is within the bounds but does not intersect.
+            return false;
+        }
+
         public bool intersects(FVRectangle rect)
         {
             if (!bnds.intersects(rect))

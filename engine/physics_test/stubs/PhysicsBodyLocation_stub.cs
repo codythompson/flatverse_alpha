@@ -56,22 +56,22 @@ namespace physics_test
             throw new NotImplementedException();
         }
 
-        public override bool onPlatformAbove(Polygon other)
+        public override bool onPlatformAbove(Polygon other, float t)
         {
             throw new NotImplementedException();
         }
 
-        public override bool onPlatformBelow(Polygon other)
+        public override bool onPlatformBelow(Polygon other, float t)
         {
             throw new NotImplementedException();
         }
 
-        public override bool onPlatformLeftOf(Polygon other)
+        public override bool onPlatformLeftOf(Polygon other, float t)
         {
             throw new NotImplementedException();
         }
 
-        public override bool onPlatformRightOf(Polygon other)
+        public override bool onPlatformRightOf(Polygon other, float t)
         {
             throw new NotImplementedException();
         }

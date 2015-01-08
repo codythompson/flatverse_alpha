@@ -66,12 +66,12 @@ namespace flatverse.physics
 
         public abstract Vector2 selfAdjustPath(PhysicsBodyLocation heavier);
 
-        public abstract bool onPlatformAbove(Polygon other);
+        public abstract bool onPlatformAbove(Polygon other, float t);
 
-        public abstract bool onPlatformBelow(Polygon other);
+        public abstract bool onPlatformBelow(Polygon other, float t);
 
-        public abstract bool onPlatformLeftOf(Polygon other);
+        public abstract bool onPlatformLeftOf(Polygon other, float t);
 
-        public abstract bool onPlatformRightOf(Polygon other);
+        public abstract bool onPlatformRightOf(Polygon other, float t);
     }
 }

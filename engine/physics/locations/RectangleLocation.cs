@@ -176,7 +176,8 @@ namespace flatverse.physics
 
         public override bool intersectsPath(Polygon other, float t)
         {
-            throw new NotImplementedException();
+            Polygon path = getPath(t);
+            return path.intersects(other);
         }
 
         public override bool intersectsPos(Polygon other, float t)
@@ -201,24 +202,32 @@ namespace flatverse.physics
             return new Vector2(0);
         }
 
-        public override bool onPlatformAbove(Polygon other)
+        public override bool onPlatformAbove(Polygon other, float t)
         {
-            throw new NotImplementedException();
+            Vector2 curPos = getIntermediate(t);
+            FVRectangle spaceAbove = new FVRectangle(curPos.X, curPos.Y - 1, width, 1);
+            return other.intersects(spaceAbove);
         }
 
-        public override bool onPlatformBelow(Polygon other)
+        public override bool onPlatformBelow(Polygon other, float t)
         {
-            throw new NotImplementedException();
+            Vector2 curPos = getIntermediate(t);
+            FVRectangle spaceBelow = new FVRectangle(curPos.X, curPos.Y + height, width, 1);
+            return other.intersects(spaceBelow);
         }
 
-        public override bool onPlatformLeftOf(Polygon other)
+        public override bool onPlatformLeftOf(Polygon other, float t)
         {
-            throw new NotImplementedException();
+            Vector2 curPos = getIntermediate(t);
+            FVRectangle spaceLeft = new FVRectangle(curPos.X - 1, curPos.Y, 1, height);
+            return other.intersects(spaceLeft);
         }
 
-        public override bool onPlatformRightOf(Polygon other)
+        public override bool onPlatformRightOf(Polygon other, float t)
         {
-            throw new NotImplementedException();
+            Vector2 curPos = getIntermediate(t);
+            FVRectangle spaceRight = new FVRectangle(curPos.X + width, curPos.Y, 1, height);
+            return other.intersects(spaceRight);
         }
     }
 }
