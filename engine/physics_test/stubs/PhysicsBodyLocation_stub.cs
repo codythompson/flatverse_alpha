@@ -2,7 +2,7 @@
 using Microsoft.Xna.Framework;
 using flatverse.physics;
 
-namespace physics_test
+namespace flatverse.physics.test
 {
     public class PhysicsBodyLocation_stub : PhysicsBodyLocation
     {

@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using flatverse.physics;
 using Microsoft.Xna.Framework;
 
-namespace physics_test
+namespace flatverse.physics.test
 {
     [TestClass]
     public class PhysicsBodyLocation_test
