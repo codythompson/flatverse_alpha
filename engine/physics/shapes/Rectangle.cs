@@ -121,14 +121,16 @@ namespace flatverse.physics
 
         public static FVRectangle operator +(FVRectangle rect, Vector2 delta)
         {
-            rect.move(delta);
-            return rect;
+            Vector2 topLeft = rect.topLeft() + delta;
+            Vector2 dims = new Vector2(rect.width(), rect.height());
+            return new FVRectangle(topLeft, dims);
         }
 
         public static FVRectangle operator -(FVRectangle rect, Vector2 delta)
         {
-            rect.move(-delta);
-            return rect;
+            Vector2 topLeft = rect.topLeft() - delta;
+            Vector2 dims = new Vector2(rect.width(), rect.height());
+            return new FVRectangle(topLeft, dims);
         }
     }
 }
